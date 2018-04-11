@@ -26,7 +26,9 @@ Some of these Keybindings work only in exwm mode
 | s-<number> | switch to <number> workspace                         |                                                    |
 | s-d        | launch Programms                                     |                                                    |
 | s-spc      | dmenu                                                |                                                    |
+| s-i        | toggle between line and char mode                    |                                                    |
 | s-p        | toggle between char and mode for better copy/pasting | found on stackoverflow                             |
+| C-x C-f    | toggle between char and line in ansi-term            |                                                    |
 | s-h        | system monitor                                       |                                                    |
 | <print>    | Screenshot                                           |                                                    |
 | <f5>       | Projectile                                           | https://projectile.readthedocs.io/en/latest/usage/ |
@@ -356,7 +358,6 @@ I don't use either, you might want to turn those from =nil= to =t= if you do.
 
 * Window Manager
 Everything regarding the WM or DE-like functionality is bundled here, remove the entire section if you do not wish to use =exwm=.
-
 ** exwm
 The only time I actually had to use comments, this is for ease of removal if youu happen to not like exwm.
 *** Installation
@@ -387,6 +388,7 @@ The only time I actually had to use comments, this is for ease of removal if you
 )
   )
 
+
     (defun exwm-input-line-mode ()
      "Set exwm window to line-mode and show mode line"
       (call-interactively #'exwm-input-grab-keyboard)
@@ -395,7 +397,8 @@ The only time I actually had to use comments, this is for ease of removal if you
    (defun exwm-input-char-mode ()
       "Set exwm window to char-mode and hide mode line"
       (call-interactively #'exwm-input-release-keyboard)
-     (exwm-layout-hide-mode-line))
+ 
+)
 
     (defun exwm-input-toggle-mode ()
       "Toggle between line- and char-mode"
